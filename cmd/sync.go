@@ -13,28 +13,16 @@ import (
 // syncCmd represents the sync command
 var syncCmd = &cobra.Command{
 	Use:   "sync",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Align the physical cache and environment state with the manifest file.",
+	Long: `Audits the local workspace configuration against the global, drive-localized cache.
+It identifies missing direct or transitive dependencies, downloads them concurrently
+in a worker pool using your parallel downloader, and completely regenerates the
+workspace path routing logs to ensure environment consistency.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("sync called")
+		fmt.Printf("not implemented %q yet\n", cmd.Short)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(syncCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// syncCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// syncCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

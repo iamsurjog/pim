@@ -13,28 +13,16 @@ import (
 // toolCmd represents the tool command
 var toolCmd = &cobra.Command{
 	Use:   "tool",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Execute an installed package command-line utility directly.",
+	Long: `Locates the executable entry-point script generated in the global cache for a
+specific package tool (e.g., black, jupyter, flake8) matching your project requirements.
+It assembles the necessary environment states on the fly and invokes the utility command
+natively, passing along any runtime flags.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("tool called")
+		fmt.Printf("not implemented %q yet\n", cmd.Short)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(toolCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// toolCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// toolCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

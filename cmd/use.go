@@ -13,28 +13,15 @@ import (
 // useCmd represents the use command
 var useCmd = &cobra.Command{
 	Use:   "use",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Switch the current project workspace to a specific Python version.",
+	Long: `Mutates the 'python = "<version>"' key inside the local project configuration file
+and points the path routing variables to the requested binary directory. This re-routes
+execution instantly without altering system-wide environments.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("use called")
+		fmt.Printf("not implemented %q yet\n", cmd.Short)
 	},
 }
 
 func init() {
 	pyCmd.AddCommand(useCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// useCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// useCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

@@ -13,28 +13,16 @@ import (
 // clearCmd represents the clear command
 var clearCmd = &cobra.Command{
 	Use:   "clear",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Clear the local workspace configuration states and target environment links.",
+	Long: `Strips away the generated local .env pathing maps, clears out cached dynamic script
+trackers, and forces the workspace to sever ties with the global package execution
+layer. It leaves your core source files intact but resets the orchestration boundaries
+so you can rebuild the environment via 'pim sync'.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("clear called")
+		fmt.Printf("not implemented %q yet\n", cmd.Short)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(clearCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// clearCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// clearCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
