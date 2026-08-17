@@ -22,11 +22,7 @@ hooks the workspace by writing an optimized local .env file for IDE autocompleti
 		// TODO: Take python version
 		// fmt.Printf("Enter python version to use:")
 		// fmt.Scan()
-		lock := `{
-    "version": 3.14,
-    "dependencies": [],
-	"scripts": [],
-}`
+		lock := ``
 		_, err := os.Stat(fileName)
 		if err == nil {
 			fmt.Printf("File '%s' already exists. Skipping creation.\n", fileName)
